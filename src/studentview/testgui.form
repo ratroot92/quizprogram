@@ -34,9 +34,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="b1" min="-2" pref="253" max="-2" attributes="0"/>
+                      <Component id="start" min="-2" pref="253" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="b2" min="-2" pref="256" max="-2" attributes="0"/>
+                      <Component id="end" min="-2" pref="256" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -71,9 +71,9 @@
                                                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="b7" min="-2" pref="156" max="-2" attributes="0"/>
+                                                      <Component id="next" min="-2" pref="156" max="-2" attributes="0"/>
                                                       <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="b5" min="-2" pref="176" max="-2" attributes="0"/>
+                                                      <Component id="submit" min="-2" pref="176" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
@@ -82,9 +82,9 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="b6" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Component id="re" min="-2" pref="121" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="b8" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Component id="skip" min="-2" pref="121" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -111,8 +111,8 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="b1" pref="53" max="32767" attributes="0"/>
-                  <Component id="b2" max="32767" attributes="0"/>
+                  <Component id="start" pref="53" max="32767" attributes="0"/>
+                  <Component id="end" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -138,7 +138,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="b6" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
+                          <Component id="re" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="t3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -158,11 +158,11 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="b5" pref="49" max="32767" attributes="0"/>
-                          <Component id="b7" max="32767" attributes="0"/>
+                          <Component id="submit" pref="49" max="32767" attributes="0"/>
+                          <Component id="next" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="b8" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="skip" min="-2" pref="68" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="185" max="-2" attributes="0"/>
@@ -172,22 +172,22 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="b1">
+    <Component class="javax.swing.JButton" name="start">
       <Properties>
         <Property name="text" type="java.lang.String" value="Start Test"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="b1MouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b1ActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="startMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="b2">
+    <Component class="javax.swing.JButton" name="end">
       <Properties>
         <Property name="text" type="java.lang.String" value="End Test "/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="b2MouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b2ActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="endMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="endActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -238,12 +238,12 @@
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="b5">
+    <Component class="javax.swing.JButton" name="submit">
       <Properties>
         <Property name="text" type="java.lang.String" value="SUBMIT ANSWER"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="c1">
@@ -293,20 +293,20 @@
         <Property name="text" type="java.lang.String" value="Difficulty Level"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="b6">
+    <Component class="javax.swing.JButton" name="re">
       <Properties>
         <Property name="text" type="java.lang.String" value="RECHOOSE"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b6ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="b7">
+    <Component class="javax.swing.JButton" name="next">
       <Properties>
         <Property name="text" type="java.lang.String" value="NEXT QUESTION"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b7ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -330,12 +330,12 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="b8">
+    <Component class="javax.swing.JButton" name="skip">
       <Properties>
         <Property name="text" type="java.lang.String" value="SKIP QUESTION"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b8ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="skipActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

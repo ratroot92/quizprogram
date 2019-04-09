@@ -10,8 +10,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import project1.connection;
-import project1.student;
+import adminview.connection;
+import adminview.student;
 
 /**
  *
@@ -260,6 +260,8 @@ public class studentlogin extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Failed To Validated");
             clearall();
+            b1.setEnabled(true);
+            b2.setEnabled(false);
         }
     }//GEN-LAST:event_b2ActionPerformed
 

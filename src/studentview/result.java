@@ -7,7 +7,7 @@ package studentview;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import project1.connection;
+import adminview.connection;
 
 /**
  *

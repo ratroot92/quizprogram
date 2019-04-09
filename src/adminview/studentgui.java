@@ -166,6 +166,8 @@ t3.setText(table.getModel().getValueAt(row, 2).toString());
 
         jLabel2.setText("Student Id");
 
+        t1.setEditable(false);
+
         jLabel3.setText("Student Name");
 
         jLabel4.setText("Student Roll No");

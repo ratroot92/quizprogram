@@ -212,6 +212,8 @@ catch(Exception ex){
 
         jLabel2.setText("Question ID");
 
+        qid.setEditable(false);
+
         jLabel3.setText("Question String");
 
         qstring_txt.setColumns(1);

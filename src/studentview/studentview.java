@@ -9,7 +9,13 @@ import java.beans.PropertyVetoException;
 import javax.swing.JMenu;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
-import project1.studentgui;
+import adminview.studentgui;
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import  java.util.*;
 
 /**
  *
@@ -20,10 +26,15 @@ public class studentview extends javax.swing.JFrame {
     /**
      * Creates new form studentview
      */
+    
     public studentview() {
         initComponents();
+        
     }
  
+
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,15 +60,17 @@ public class studentview extends javax.swing.JFrame {
             }
         });
 
+        dp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout dpLayout = new javax.swing.GroupLayout(dp);
         dp.setLayout(dpLayout);
         dpLayout.setHorizontalGroup(
             dpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 961, Short.MAX_VALUE)
+            .addGap(0, 959, Short.MAX_VALUE)
         );
         dpLayout.setVerticalGroup(
             dpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 607, Short.MAX_VALUE)
+            .addGap(0, 605, Short.MAX_VALUE)
         );
 
         menu.setBackground(javax.swing.UIManager.getDefaults().getColor("FormattedTextField.selectionForeground"));
