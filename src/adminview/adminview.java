@@ -19,17 +19,22 @@ import java.sql.SQLException;
  */
 public class adminview extends javax.swing.JFrame {
 
+   
+
     /**
      * Creates new form adminview
      */
     public adminview() {
         initComponents();
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        
     }
+    
+    
     
 
     
-   
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,7 +49,7 @@ public class adminview extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         dp = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        loginmenu = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -87,7 +92,7 @@ public class adminview extends javax.swing.JFrame {
             .addGap(0, 564, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Login");
+        loginmenu.setText("Login");
 
         jMenuItem2.setText("Login Now");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -95,9 +100,9 @@ public class adminview extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        loginmenu.add(jMenuItem2);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(loginmenu);
 
         jMenu2.setText("Admin Details");
 
@@ -228,10 +233,11 @@ public class adminview extends javax.swing.JFrame {
         a.setClosable(true);
         a.setVisible(true);
           dp.add(a);
+              a.pack();
           try{
                a.setMaximum(true);
     }
-    
+
     catch(PropertyVetoException ex){
     
     JOptionPane.showMessageDialog(dp, ex);
@@ -399,7 +405,6 @@ studentgui a=new studentgui();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane dp;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -416,6 +421,7 @@ studentgui a=new studentgui();
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    public static javax.swing.JMenu loginmenu;
     // End of variables declaration//GEN-END:variables
 
     private void ClassforName(String commysqljdbcDriver) {

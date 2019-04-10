@@ -237,6 +237,7 @@ else{
     JOptionPane.showMessageDialog(this, "Access Granted !!! Welcome To Admin view  ");
      allowed=true;
      adminname=(String) t1.getSelectedItem();
+     
     setVisible(false);
      dispose();
      

@@ -5,17 +5,11 @@
  */
 package studentview;
 
+import adminview.adminview;
 import java.beans.PropertyVetoException;
 import javax.swing.JMenu;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
-import adminview.studentgui;
-import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.Toolkit;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import  java.util.*;
 
 /**
  *
@@ -33,7 +27,6 @@ public class studentview extends javax.swing.JFrame {
         
     }
  
-
     
     
     /**

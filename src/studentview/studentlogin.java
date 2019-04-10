@@ -5,6 +5,7 @@
  */
 package studentview;
 
+import adminview.adminview;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -12,6 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import adminview.connection;
 import adminview.student;
+
 
 /**
  *
@@ -32,14 +34,25 @@ public class studentlogin extends javax.swing.JInternalFrame {
 
     public studentlogin() {
         initComponents();
-
+       
     }
+    
+    
+    
+    
+    public static void setname(){
+         adminview a=new adminview();
+         a.loginmenu.setEnabled(false);
+    }
+    
+    
+    
 
     //snding value to test using dao (student name and student id )
     public student sent() {
         student a = new student();
         a.std_id = gstudentid;
-        a.std_name = gstudentname;
+        a.std_name = gstudentname="";
         return a;
     }
 
@@ -85,8 +98,9 @@ public class studentlogin extends javax.swing.JInternalFrame {
             rollnumber = rs.getString(3);
             if (t1.getSelectedItem().equals(t1.getSelectedItem()) && t2.getText().equals(rollnumber)) {
                 validated = 1;
-
+               setname();
                 break;
+                
             }
 
         }
@@ -120,6 +134,7 @@ public class studentlogin extends javax.swing.JInternalFrame {
             public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameDeactivated(evt);
             }
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -222,6 +237,7 @@ public class studentlogin extends javax.swing.JInternalFrame {
         loadstudentnames();
         b2.setEnabled(false);
         b3.setEnabled(false);
+       
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
@@ -252,7 +268,8 @@ public class studentlogin extends javax.swing.JInternalFrame {
         if (validated == 1) {
             sent();
 
-            b3.setEnabled(true);
+          
+
 
             JOptionPane.showMessageDialog(this, "Validated Succesfully");
             this.dispose();
@@ -268,6 +285,10 @@ public class studentlogin extends javax.swing.JInternalFrame {
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
 
     }//GEN-LAST:event_b3ActionPerformed
+
+    private void formInternalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameDeactivated
+     
+    }//GEN-LAST:event_formInternalFrameDeactivated
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
