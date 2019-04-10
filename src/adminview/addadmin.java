@@ -226,11 +226,17 @@ else{
         flag = checkemptyforinsert();
         if (flag == false) {
             JOptionPane.showMessageDialog(this, "Fill All The Fields");
+            b2.setEnabled(false);
+            b1.setEnabled(true);
         } else {
             
             insert();
             clearall();
-        }       checkpassword();    // TODO add your handling code here:
+             b2.setEnabled(false);
+            b1.setEnabled(true);
+            
+        }      
+// checkpassword();    // TODO add your handling code here:
     }//GEN-LAST:event_b2ActionPerformed
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated

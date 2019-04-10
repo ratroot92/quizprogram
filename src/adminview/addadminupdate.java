@@ -69,7 +69,12 @@ catch(Exception ex){
 
 public boolean checkemptyforupdate(){
     if(t1.getText().equals("") || t2.getText().equals("") || t3.getText().equals("") ||t4.getText().equals("") ){
+        JOptionPane.showMessageDialog(this, "Fill all the fields ");
         return false;
+    }
+    else if((t3.getText()) == null ? t4.getText() != null : !(t3.getText()).equals(t4.getText())){
+        JOptionPane.showMessageDialog(this, "Password and Confirm Mismatched ");
+    return false;
     }
     else{
         return true;
@@ -136,13 +141,6 @@ public void delete(){
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                formInternalFrameActivated(evt);
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
@@ -150,6 +148,13 @@ public void delete(){
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
 
@@ -159,6 +164,7 @@ public void delete(){
 
         jLabel2.setText("Admin Id ");
 
+        t1.setEditable(false);
         t1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t1ActionPerformed(evt);
@@ -275,7 +281,8 @@ public void delete(){
        boolean flag;
         flag =checkemptyforupdate();
         if(flag== false){
-        JOptionPane.showMessageDialog(this, "Fill All The Fields ");
+       clearall();
+            display();
     }
 else{
         update();

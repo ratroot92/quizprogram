@@ -15,17 +15,12 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import adminview.connection;
 import java.sql.*;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JList;
-import javax.swing.JScrollPane;
-import javax.swing.ListModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -52,6 +47,8 @@ boolean doubleskipped=false;
     int difficultylevel;
     static int counttimer = 0;
     ArrayList qid_array = new ArrayList();
+    String globalcategory=null;
+    int closeformcounter=0;
     connection c = new connection();
 
     //end of global declerations
@@ -117,7 +114,7 @@ boolean doubleskipped=false;
             }
             
 
-        } catch (Exception ex) {
+        } catch (HeadlessException ex) {
             JOptionPane.showMessageDialog(this, ex);
         }
     }
@@ -271,15 +268,25 @@ boolean doubleskipped=false;
     public ArrayList populatequestionarray() {
         try {
             c.connect();
-            ResultSet rs = c.select("select q_id from questions");
+            ResultSet rs = c.select("select q_id from questions where q_cat='"+globalcategory+"'");
             while (rs.next()) {
                 qid_array.add(rs.getInt(1));
 
             }
             qid_array.trimToSize();
-            JOptionPane.showMessageDialog(this, "questions populated ");
+            if(qid_array.size()<10){
+                 JOptionPane.showMessageDialog(this, "At Least 10 Questions are Requuired In Database for Category = "+globalcategory);
+                setVisible(false);
+                dispose();
+            }
+          
+            else{
+            
+           
+            JOptionPane.showMessageDialog(this, "Test Of Category = "+globalcategory);
             return qid_array;
-
+            }
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, ex);
         }
@@ -300,6 +307,40 @@ boolean doubleskipped=false;
 
     }
 
+    
+    public void selectcategory(){
+       while(globalcategory==null)
+        { 
+      closeformcounter++;
+         Object[] catObjects = null;
+            ArrayList catnames=new ArrayList();
+            c.connect();
+            ResultSet rs=c.select("select cat_name from category");
+            try {
+                while(rs.next())
+                {
+                    catnames.add(rs.getString(1));  
+                }
+                catnames.trimToSize();
+              catObjects= catnames.toArray();
+            } catch (SQLException ex) {
+                Logger.getLogger(testgui.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            globalcategory= (String) JOptionPane.showInputDialog(null,  
+                "Select Category For The Test :\n\from Categories Given Below", "ShowInputDialog",  
+               JOptionPane.PLAIN_MESSAGE,null, catObjects, "Categories"); 
+           
+              if(closeformcounter>=3){
+                 
+                  setVisible(false);
+                  dispose();
+              }
+               
+            }
+       
+       
+     }
+     
   
 
     public int totalquestion() throws SQLException {
@@ -623,10 +664,11 @@ boolean doubleskipped=false;
             setVisible(false);
             dispose();
 
-        } else {
-            
-           
-           
+        } 
+           else{
+              
+                   selectcategory();
+               
            
             end.setEnabled(false);
             submit.setEnabled(false);
@@ -636,7 +678,7 @@ boolean doubleskipped=false;
             skip.setEnabled(false);
             populatequestionarray();
         }
-
+        
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void startMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startMouseClicked

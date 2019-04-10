@@ -133,13 +133,6 @@ catch(Exception ex){
         jTable1 = new javax.swing.JTable();
 
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                formInternalFrameActivated(evt);
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
@@ -148,6 +141,13 @@ catch(Exception ex){
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
             }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -155,6 +155,8 @@ catch(Exception ex){
         jLabel1.setText("QUESTIONS CATEGORY");
 
         jLabel2.setText("Category ID");
+
+        t1.setEditable(false);
 
         jLabel3.setText("Category Name");
 

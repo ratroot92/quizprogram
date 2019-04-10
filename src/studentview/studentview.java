@@ -29,6 +29,7 @@ public class studentview extends javax.swing.JFrame {
     
     public studentview() {
         initComponents();
+       setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         
     }
  
@@ -262,6 +263,7 @@ public class studentview extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new studentview().setVisible(true);
+              
             }
         });
     }
@@ -278,6 +280,10 @@ public class studentview extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     void setEnabled(JMenu m2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setMaximumSize(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
